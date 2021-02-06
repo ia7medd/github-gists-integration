@@ -1,0 +1,15 @@
+.main-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    img.logo{
+        width: 70px;
+    }
+    h1{
+        font-size: 20px;
+    }
+    p{
+        color: #999;
+    }
+}

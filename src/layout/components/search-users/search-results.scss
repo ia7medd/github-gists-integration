@@ -1,0 +1,37 @@
+@import '../../../scss/variables';
+.gists-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: $main-space;
+    row-gap: $main-space;
+    align-items: stretch;
+    @media (max-width: 700px){
+        grid-template-columns: 1fr;
+
+    }
+    .gist-card{
+            padding: $main-space;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            .gist-card-description{
+                font-weight: bold;
+            }
+            .gist-card-data-row{
+                margin-bottom: 10px;
+                font-size: 80%;
+            }
+            .gist-cards{
+                display: flex;
+                flex-wrap: wrap;
+                margin-bottom: $main-space;
+            }
+            .gist-card-button{
+                display: flex;
+                justify-content: flex-end;
+                .main-button{
+                    margin-left: 10px;
+                }
+            }
+    }
+}
