@@ -7,7 +7,7 @@ export function MainHeader() {
       <img src='github.svg' className='logo mr-15' alt='header logo' />
       <div>
         <h1>Github Searcher</h1>
-        <p>search user</p>
+        <p>search user gists</p>
       </div>
     </div>
   );
