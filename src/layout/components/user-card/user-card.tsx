@@ -36,7 +36,7 @@ export function UserCard(props: UserCardProps) {
         <OneRow
           label='Github link:'
           value={
-            <a href={gitHubLink} target='_blank'>
+            <a href={gitHubLink} target='_blank' rel='noreferrer'>
               {gitHubLink}
             </a>
           }

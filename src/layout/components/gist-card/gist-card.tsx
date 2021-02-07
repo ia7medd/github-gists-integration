@@ -38,7 +38,7 @@ export function GistCard({ card }: { card: OneCardType }) {
         )}
       </div>
       <div className='gist-card-button'>
-        <a className='main-button' target='_blank' href={card.html_url}>
+        <a className='main-button' target='_blank' rel='noreferrer' href={card.html_url}>
           Go to the page
         </a>
         <button className='main-button' onClick={getForksData} disabled={isFinishedOnce || isLoading}>
