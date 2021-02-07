@@ -2,7 +2,6 @@ import React from 'react';
 import { ApiResponse } from '../../../api/api.types';
 import { useGetForksData } from '../../../hooks/use-get-fork-data';
 import { Forks } from '../forks-list/forks';
-import { Loader } from '../loader/loader';
 import './gist-card.scss';
 
 type OneCardType = ApiResponse['data'][0];
