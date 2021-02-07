@@ -26,9 +26,6 @@ Created by `Create React App` with Typescript
 
 # Development decisions
 
-was thinking to implement Redux saga to listen to state change and fire the dispatch but it wasn't in
-the requirements.
-
 <b>Why create react app</b>
 create react app prepare everything to start modern single page with react
 and save a lot of time in setup the build configuration.
@@ -37,7 +34,7 @@ and save a lot of time in setup the build configuration.
 Just pre-processor to simplify and use variables in css.
 
 <b>Components</b>
-Separting the components so it will be easy to be reuseable with less logic possible
+Separating the components so it will be easy to be reuseable with less logic possible
 while sometimes we need to write some logic.
 
 # Folder Structure
