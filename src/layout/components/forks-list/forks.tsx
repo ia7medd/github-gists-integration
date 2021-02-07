@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { ForksApiResponse } from '../../../api/api.types';
 import './forks.scss';
 

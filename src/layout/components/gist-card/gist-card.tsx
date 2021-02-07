@@ -1,7 +1,9 @@
 import React from 'react';
 import { ApiResponse } from '../../../api/api.types';
-import { Forks } from './forks';
-import { useGetForksData } from './hooks/use-get-fork-data';
+import { useGetForksData } from '../../../hooks/use-get-fork-data';
+import { Forks } from '../forks-list/forks';
+import { Loader } from '../loader/loader';
+import './gist-card.scss';
 
 type OneCardType = ApiResponse['data'][0];
 
@@ -19,7 +21,7 @@ const Badges = ({ files }: BadgesProps) => {
 };
 
 export function GistCard({ card }: { card: OneCardType }) {
-  const { isFinishedOnce, forks, getForksData } = useGetForksData(card.forks_url);
+  const { isFinishedOnce, forks, isLoading, getForksData } = useGetForksData(card.forks_url);
 
   return (
     <>
@@ -28,12 +30,18 @@ export function GistCard({ card }: { card: OneCardType }) {
         <div className='gist-card-data-row'> {card.comments} comments</div>
         <Badges files={card.files} />
         {isFinishedOnce && <Forks forks={forks} />}
+        {isLoading && (
+          <div className='flex-container grey-color'>
+            <div className='loader mr-15' />
+            Loading forks...
+          </div>
+        )}
       </div>
       <div className='gist-card-button'>
         <a className='main-button' target='_blank' href={card.html_url}>
           Go to the page
         </a>
-        <button className='main-button' onClick={getForksData} disabled={isFinishedOnce}>
+        <button className='main-button' onClick={getForksData} disabled={isFinishedOnce || isLoading}>
           Check forks
         </button>
       </div>

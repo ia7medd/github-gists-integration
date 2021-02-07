@@ -1,0 +1,13 @@
+@import '../../../scss/variables';
+
+.gists-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: $main-space;
+    row-gap: $main-space;
+    align-items: stretch;
+    @media (max-width: 700px){
+        grid-template-columns: 1fr;
+    }
+    
+}

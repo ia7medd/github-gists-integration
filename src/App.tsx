@@ -1,6 +1,6 @@
 import './App.scss';
-import { MainHeader } from './layout/components/main-header/main-header';
-import { SearchUsers } from './layout/components/search-users/search-users';
+import { MainHeader } from './layout/main-header/main-header';
+import { SearchUsers } from './layout/search-users';
 
 function App() {
   return (

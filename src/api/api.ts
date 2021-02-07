@@ -6,10 +6,10 @@ import { apiHeaders, appRootUrl } from './api.types';
  *
  * @returns Promise<AxiosResponse<any>>
  */
-export const fetchByUserName = async (searchTerm: string) =>
+export const fetchByUserName = async (searchTerm: string, page: number, per_page: number) =>
   axios.get(appRootUrl + `users/${searchTerm}/gists`, {
     headers: apiHeaders,
-    params: { per_page: 100 },
+    params: { per_page, page },
   });
 
 /**
