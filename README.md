@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Table of contents
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [General info](#general-info)
+- [Used Stack](#used-stack)
+- [Development decisions](#development-decisions)
+- [Folder Structure](#folder-structure)
+- [Setup](#setup)
+- [Demo](#demo)
+- [Future Enhancement](#future-enhancement)
 
-## Available Scripts
+# General Info
 
-In the project directory, you can run:
+Allows the users to search the `github gists` by user GitHub.
+Using Github Gist Api https://docs.github.com/en/rest/reference/gists
 
-### `yarn start`
+When user start typing the app will start searching for this user gists, it will show user card and list of gists.
+for each gist also user can check for the forks.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Used Stack
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Created by `Create React App` with Typescript
 
-### `yarn test`
+- React.js
+- TypeScript
+- SASS
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Development decisions
 
-### `yarn build`
+was thinking to implement Redux saga to listen to state change and fire the dispatch but it wasn't in
+the requirements.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<b>Why create react app</b>
+create react app prepare everything to start modern single page with react
+and save a lot of time in setup the build configuration.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<b>SASS</b>
+Just pre-processor to simplify and use variables in css.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<b>Components</b>
+Separting the components so it will be easy to be reuseable with less logic possible
+while sometimes we need to write some logic.
 
-### `yarn eject`
+# Folder Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+/src
+  ├── api                   # For API calls and types
+  ├── helpers               # Utilites for hold helper functions
+  ├── hooks
+  ├── layout
+  |  ├── main-header
+  |  ├── components         # All Components
+  │      ├── error
+  │      ├── forks-list
+  │      ├── gist-card
+  │      ├── loader
+  │      ├── no-results
+  │      ├── search-results
+  │      ├── user-card
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Setup
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Install dependencies:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```sh
+yarn
+```
 
-## Learn More
+Run App
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```sh
+yarn start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Demo
 
-### Code Splitting
+https://github-gists-integration.vercel.app/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Future Enhancement
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Write unit test
+- UI enhancements
+- Create generic components for some elements like buttons
